@@ -1,27 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import {Root, ProductRoute, Error404} from "./routes";
+import {RouterProvider} from "react-router-dom";
 import './styles/app.scss';
 import reportWebVitals from './reportWebVitals';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <Error404 />,
-    children: [
-      {
-        path: "product/:productId",
-        element: <ProductRoute />,
-
-      },
-    ],
-  },
-]);
+import router from './routes/router';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
