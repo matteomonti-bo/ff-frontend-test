@@ -1,11 +1,11 @@
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./root";
+import { getProducts } from "../services/products";
 
 const Error404 = lazy(() => import("../pages/error404"));
 const HomePage = lazy(() => import("../pages/home"));
 const ProductPage = lazy(() => import("../pages/product"));
-
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <Error404 />,
     children: [
-      { path: "/", element: <HomePage /> },
+      { path: "/", element: <HomePage />, loader: getProducts },
       { path: "product/:productId", element: <ProductPage /> },
     ],
   },
