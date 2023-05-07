@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import {Root, ProductRoute, Error404} from "./routes";
-import './index.css';
+import './styles/app.scss';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([

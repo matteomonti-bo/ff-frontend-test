@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // @see breakpoint-max mixin in bootstrap
 // Maximum breakpoint width. Null for the largest (last) breakpoint.
 // The maximum value is calculated as the minimum of the next one less 0.02px
@@ -29,4 +31,9 @@
   } @else {
     @content;
   }
+}
+
+@function toRem($value) {
+  $remValue: math.div($value, 16) + rem;
+  @return $remValue;
 }
