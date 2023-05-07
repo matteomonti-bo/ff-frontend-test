@@ -1,16 +1,24 @@
 import { IProduct } from "../../models";
 import ErrorMessage from "../ErrorMessage"
+import ProductCard from "../ProductCard";
 
 type ProductListProps = {
   products: IProduct[];
 };
 
 const ProductList = ({ products }: ProductListProps) => {
-  console.log(products)
   if (!products.length)
     return <NoProduct />;
 
-  return <>Product list</>
+  // product card map
+  const items = products.map( (item) => <ProductCard key={item.id} product={item} />)
+
+  return (
+    <section>
+      <h1 className="visually-hidden">Shop page</h1>
+      {items}
+    </section>
+  )
 }
 
 const NoProduct = () => {
