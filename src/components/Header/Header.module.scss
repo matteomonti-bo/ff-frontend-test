@@ -1,0 +1,52 @@
+@use '../../styles/base' as *;
+
+.header{
+  padding: 20px 16px;
+  display: flex;
+  @include above($bp-sm){
+    padding: 20px;
+  }
+
+  .logoWrapper{
+    flex: 1 0 auto;
+  }
+
+  .infoWrapper{
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .link{
+    display: inline-block;
+    font-size: toRem(20);
+    line-height: 2rem;
+    margin-right: toRem(20);
+    @include above($bp-md){
+      margin-right: toRem(36);
+    }
+  }
+
+  .logo{
+    width: 41px;
+    @include above($bp-sm){
+      display: none;
+    }
+  }
+
+  .logoLarge{
+    display: none;
+    width: 200px;
+    @include above($bp-sm){
+      display: block;
+    }
+  }
+
+  .bag{
+    width: 26px;
+    margin-bottom: 7px;
+    @include above($bp-md){
+      margin-right: 2rem;
+    }
+  }
+}
