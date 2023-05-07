@@ -4,7 +4,22 @@ $card-size: 250px;
 .productCard {
   text-align: center;
   margin: 40px auto;
-  width: $card-size;
+  width: 100%;
+  max-width: $card-size;
+
+  @include above($bp-sm){
+    margin: 10px 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 17px;
+  }
+  @include above($bp-md){
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+  @include above($bp-xl){
+    padding: 0 30px;
+  }
 
   .thumb {
     background-color: #fff;
@@ -13,8 +28,8 @@ $card-size: 250px;
     border-radius: 4px;
 
     img{
-      width: $card-size;
-      height: $card-size;
+      max-width: 100%;
+      aspect-ratio: 1;
       object-fit: contain;
       object-position: center;
     }

@@ -1,0 +1,16 @@
+@use '../../styles/base' as *;
+
+.productList{
+  @include above($bp-sm){
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+  @include above($bp-md){
+    max-width: 1064px;
+  }
+  @include above($bp-xl){
+    max-width: 1400px;
+  }
+}
