@@ -1,12 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { IProduct } from "../models";
+import ProductList from "../components/ProductList/ProductList";
 
 const HomePage = () => {
   const products = useLoaderData() as IProduct[];
-  console.log(products)
 
   return (
-    <>Home!</>
+    <>
+      <div>filter here</div>
+      <ProductList products={products} />
+    </>
   )
 }
 
