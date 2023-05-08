@@ -14,15 +14,14 @@ const HomePage = () => {
   const [filterValues, setFilterValues] = useState(initialFilterValues)
 
   // filter inputs change
-  const handleFilterInputChange = (name: string, value: string) => {
-    //const { name, value } = e.target;
+  const handleFilterChange = (name: string, value: string) => {
     setFilterValues(prevState => ({ ...prevState, [name]: value }))
   }
 
   return (
     <>
-      <FilterBar products={products} filterValues={filterValues} onInputChange={handleFilterInputChange} />
-      <ProductList products={products} />
+      <FilterBar products={products} onInputChange={handleFilterChange} />
+      <ProductList products={products} filters={filterValues} />
     </>
   )
 }

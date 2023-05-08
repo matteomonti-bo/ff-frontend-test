@@ -1,12 +1,17 @@
 import { FiltersType } from "../../models";
 
 type FilterProps = {
-  filterBy: FiltersType,
-  values: string[]
+  filterBy: FiltersType;
+  values: string[];
+  onFilterClick: (filter: string, value:string) => void;
 }
 
-const Filter = ({filterBy, values}: FilterProps) => {
-  const items = values.map((item) => <button key={item}>{item}</button>)
+const Filter = ({filterBy, values, onFilterClick}: FilterProps) => {
+  const handleClick = (filter: string, value:string) => {
+    onFilterClick(filter, value);
+  }
+  const items = values.map((item) => <button key={item} onClick={() => handleClick(filterBy, item)}>{item}</button>)
+
   return (
     <div>
       <span>{filterBy}</span>

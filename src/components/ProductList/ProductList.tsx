@@ -1,18 +1,28 @@
-import { IProduct } from "../../models";
+import { IProduct, FilterFields } from "../../models";
 import ErrorMessage from "../ErrorMessage"
 import ProductCard from "../ProductCard";
 import styles from "./ProductList.module.scss"
 
 type ProductListProps = {
   products: IProduct[];
+  filters: FilterFields
 };
 
-const ProductList = ({ products }: ProductListProps) => {
+const ProductList = ({ products, filters }: ProductListProps) => {
   if (!products.length)
     return <NoProduct />;
 
-  // product card map
-  const items = products.map( (item) => <ProductCard key={item.id} product={item} />)
+  // copy onbject and filter products
+  const filterProducts = (products: IProduct[]) => {
+    if (filters.category === "" && filters.brand === "") return products;
+    // filter products
+    return products
+      .filter((product) => product.category.toLowerCase().includes(filters.category.toLowerCase()))
+      .filter((product) => product.brand.toLowerCase().includes(filters.brand.toLowerCase()));
+  };
+
+  const filteredProducts = filterProducts(products);
+  const items = filteredProducts.map( (item) => <ProductCard key={item.id} product={item} />)
 
   return (
     <section className={styles.productList}>

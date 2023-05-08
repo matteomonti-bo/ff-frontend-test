@@ -1,18 +1,17 @@
 import { useState } from "react";
 import classNames from 'classnames';
 import Filter from "../Filter";
-import { IProduct, FiltersType, FilterFields } from "../../models";
+import { IProduct, FiltersType } from "../../models";
 import { getDistinctValues } from "../../services/products";
 import styles from "./FilterBar.module.scss"
 
 
 type ProductListProps = {
   products: IProduct[];
-  filterValues: FilterFields;
   onInputChange: (name:string, value: string) => void;
 };
 
-const FilterBar = ({ products, filterValues, onInputChange }: ProductListProps) => {
+const FilterBar = ({ products, onInputChange }: ProductListProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(true)
 
   const handleClick = () => {
@@ -27,8 +26,8 @@ const FilterBar = ({ products, filterValues, onInputChange }: ProductListProps) 
     <div className={styles.filterBar}>
       <button className={classNames('accordionBtn', {collapsed})} onClick={handleClick}>FILTRI</button>
       <div className={classNames('filterWrapper', {open: !collapsed})}>
-        <Filter filterBy={FiltersType.Category} values={categories} />
-        <Filter filterBy={FiltersType.Brand} values={brand}/>
+        <Filter filterBy={FiltersType.Category} values={categories} onFilterClick={onInputChange}/>
+        <Filter filterBy={FiltersType.Brand} values={brand} onFilterClick={onInputChange}/>
       </div>
     </div>
   )
