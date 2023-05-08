@@ -1,7 +1,7 @@
 @use '../../styles/base' as *;
 
 .header{
-  padding: 20px 16px;
+  padding: 20px 16px 16px;
   display: flex;
   @include above($bp-sm){
     padding: 20px;
