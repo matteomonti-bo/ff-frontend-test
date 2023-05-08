@@ -1,4 +1,4 @@
-import { IProduct } from "../models";
+import { IProduct, FiltersType } from "../models";
 
 const domain = "https://dummyjson.com";
 
@@ -48,12 +48,12 @@ const getProduct = async (id: string | undefined): Promise<IProduct | null> => {
   return product;
 };
 
-const getCategories = (products: IProduct[]) => {
-  return Array.from(new Set(products.map((i) => i.category)));
+const getDistinctValues = (products: IProduct[], field: FiltersType) => {
+  return Array.from(new Set(products.map((i) => i[field])));
 };
 
 const handleErrors = (message: string) => {
   console.error(message);
 };
 
-export {getProducts, getProduct, getCategories};
+export {getProducts, getProduct, getDistinctValues};

@@ -11,3 +11,8 @@ export interface IProduct {
   thumbnail: string;
   images: string[];
 }
+
+export enum FiltersType {
+  Category = "category",
+  Brand = "brand"
+}
