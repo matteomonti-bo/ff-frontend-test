@@ -7,14 +7,10 @@
 
 :global{
   .accordionBtn {
+    @extend %button-unstyled;
     position: relative;
-    appearance: none;
-    background-color: transparent;
-    border: none;
     font-weight: $fw-bold;
-    font-family: $font-family;
     padding-left: 20px;
-    cursor: pointer;
     display: block;
     width: 100%;
     text-align: left;
@@ -52,7 +48,11 @@
     height: auto;
     max-height: 0;
     overflow: hidden;
-    transition: max-height ease .4s;
+    transition: max-height ease-in-out .4s;
+    border-left: 1px solid #000;
+    margin-left: 5px;
+    margin-top: 1rem;
+    padding-left: toRem(13);
     &.open{
       max-height: 350px;
     }

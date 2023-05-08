@@ -1,0 +1,20 @@
+@use '../../styles/base' as *;
+
+.filter{
+  text-transform: uppercase;
+  margin-bottom: toRem(12);
+
+  .filterLabel{
+    display: block;
+    font-weight: $fw-bold;
+    font-size: toRem(14);
+  }
+
+  .filterValue{
+    @extend %button-unstyled;
+    font-weight: $fw-light;
+    text-transform: uppercase;
+    padding: 0 1em 0 0;
+    font-size: toRem(12);
+  }
+}

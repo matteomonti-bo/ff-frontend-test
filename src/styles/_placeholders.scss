@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+%button-unstyled{
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: $font-family;
+}
