@@ -15,6 +15,7 @@
     width: 100%;
     text-align: left;
     line-height: toRem(22);
+    margin-bottom: 1rem;
     &::before{
       content: "";
       background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14.18"><path d="M15 0H0L5.71547 6.02142L5.71499 14.1807L9.28504 12.334L9.28453 6.02142L15 0Z" fill="black"></path></svg>');
@@ -51,7 +52,6 @@
     transition: max-height ease-in-out .4s;
     border-left: 1px solid #000;
     margin-left: 5px;
-    margin-top: 1rem;
     padding-left: toRem(13);
     &.open{
       max-height: 350px;

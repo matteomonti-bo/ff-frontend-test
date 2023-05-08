@@ -6,6 +6,9 @@ $card-size: 250px;
   margin: 40px auto;
   width: 100%;
   max-width: $card-size;
+  &:first-of-type{
+    margin-top: 20px;
+  }
 
   @include above($bp-sm){
     margin: 10px 0;
