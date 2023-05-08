@@ -1,7 +1,8 @@
-import { IProduct, FiltersType, FilterFields } from "../../models";
 import { useState } from "react";
-import { getDistinctValues } from "../../services/products";
 import classNames from 'classnames';
+import Filter from "../Filter";
+import { IProduct, FiltersType, FilterFields } from "../../models";
+import { getDistinctValues } from "../../services/products";
 import styles from "./FilterBar.module.scss"
 
 
@@ -18,14 +19,16 @@ const FilterBar = ({ products, filterValues, onInputChange }: ProductListProps) 
     setCollapsed(prevState => !prevState)
   }
 
-  const categories = getDistinctValues(products, FiltersType.Category);
-  const brand = getDistinctValues(products, FiltersType.Brand);
+  // recupero i valori distinti di category e brand - ai fini della prova prendo solo i primi 3 valori
+  const categories = getDistinctValues(products, FiltersType.Category).slice(0, 3);
+  const brand = getDistinctValues(products, FiltersType.Brand).slice(0, 3);
 
   return (
     <div className={styles.filterBar}>
       <button className={classNames('accordionBtn', {collapsed})} onClick={handleClick}>FILTRI</button>
       <div className={classNames('filterWrapper', {open: !collapsed})}>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <Filter filterBy={FiltersType.Category} values={categories} />
+        <Filter filterBy={FiltersType.Brand} values={brand}/>
       </div>
     </div>
   )
