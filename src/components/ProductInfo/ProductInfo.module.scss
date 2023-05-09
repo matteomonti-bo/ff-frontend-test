@@ -1,0 +1,51 @@
+@use '../../styles/base' as *;
+
+.productInfo{
+  margin: 50px;
+  text-align: center;
+
+  @include above($bp-md){
+    margin: 0 50px;
+    text-align: left;
+  }
+
+  .title{
+    font-size: toRem(24);
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    line-height: toRem(35);
+    margin: 0;
+    @include above($bp-md){
+      margin-top: 7px;
+    }
+  }
+  .price{
+    font-size: toRem(24);
+    line-height: toRem(35);
+    font-weight: $fw-light;
+  }
+  dl{
+    margin-top: 36px;
+  }
+  dt, dd{
+    display: block;
+    font-size: toRem(20);
+  }
+  dt{
+    font-weight: $fw-bold;
+    margin-bottom: 3px;
+  }
+  dd{
+    margin-left: 0;
+    font-weight: $fw-light;
+    margin-bottom: 36px;
+  }
+
+
+}
+
+:global{
+  .star-ratings{
+    margin-top: 5px;
+  }
+}

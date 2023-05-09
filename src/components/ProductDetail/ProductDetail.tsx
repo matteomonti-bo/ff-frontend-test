@@ -13,7 +13,7 @@ const ProductDetail = ({ product }:ProductDetailProps) => {
   return (
     <article className={styles.productDetail}>
       <ProductSlider images={images} title={product.title} />
-      <ProductInfo />
+      <ProductInfo product={product} />
     </article>
   )
 }
