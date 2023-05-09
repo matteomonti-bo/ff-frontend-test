@@ -4,7 +4,8 @@
   width: 100%;
   height: 100%;
   max-width: 270px;
-  @include above($bp-md){
+  box-shadow: $box-shadow;
+  @include above($bp-sm){
     max-width: 500px;
   }
 }
