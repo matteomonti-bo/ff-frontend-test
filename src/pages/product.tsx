@@ -1,12 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { IProduct } from "../models";
+import ProductSlider from "../components/ProductSlider";
+import ProductInfo from "../components/ProductInfo";
 
 const ProductPage = () => {
   const product = useLoaderData() as IProduct;
-  console.log(product)
+  const images = product?.images || [product.thumbnail]
 
   return (
-    <>Product!</>
+    <article>
+      <ProductSlider images={images} title={product.title} />
+      <ProductInfo />
+    </article>
   )
 }
 
