@@ -1,12 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import { IProduct } from "../models";
+import ProductDetail from "../components/ProductDetail";
+import BreadCrumb from "../components/BreadCrumb";
 
 const ProductPage = () => {
   const product = useLoaderData() as IProduct;
-  console.log(product)
 
   return (
-    <>Product!</>
+    <>
+      <BreadCrumb category={product.category} title={product.title} />
+      <ProductDetail product={product} />
+    </>
   )
 }
 

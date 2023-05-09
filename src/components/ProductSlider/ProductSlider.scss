@@ -1,0 +1,44 @@
+@use '../../styles/base' as *;
+
+$swiper-width: 500px;
+$swiper-width-dsk: 386px;
+
+
+.swiper{
+  width: 100%;
+  height: 100%;
+  box-shadow: $box-shadow;
+}
+
+.swiper-slide{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.custom-pagination{
+  text-align: center;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper,
+.custom-pagination{
+  max-width: 270px;
+  @include above($bp-sm){
+    max-width: $swiper-width;
+  }
+  @include between($bp-md, $bp-lg){
+    max-width: $swiper-width-dsk;
+  }
+  @include above($bp-md){
+    margin-right: 50px;
+  }
+}

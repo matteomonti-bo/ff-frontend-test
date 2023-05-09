@@ -1,0 +1,68 @@
+@use '../../styles/base' as *;
+
+.productInfo{
+  padding: 50px;
+  text-align: center;
+
+  @include above($bp-md){
+    padding: 0 50px;
+    text-align: left;
+  }
+
+  .title{
+    font-size: toRem(24);
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    line-height: toRem(35);
+    margin: 0;
+    @include above($bp-md){
+      margin-top: 7px;
+    }
+  }
+  .price{
+    font-size: toRem(24);
+    line-height: toRem(35);
+    font-weight: $fw-light;
+  }
+  dl{
+    margin-top: 36px;
+  }
+  dt, dd{
+    display: block;
+    font-size: toRem(20);
+  }
+  dt{
+    font-weight: $fw-bold;
+    margin-bottom: 3px;
+  }
+  dd{
+    margin-left: 0;
+    font-weight: $fw-light;
+    margin-bottom: 36px;
+  }
+
+  button{
+    @extend %button-unstyled;
+    background: $black;
+    border-radius: 4px;
+    border: none;
+    color: $white;
+    font-size: toRem(20);
+    line-height: toRem(29);
+    font-weight: $fw-bold;
+    text-align: center;
+    padding: 15px;
+    opacity: 1;
+    transition: opacity ease-in-out 0.2;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+
+}
+
+:global{
+  .star-ratings{
+    margin-top: 5px;
+  }
+}
