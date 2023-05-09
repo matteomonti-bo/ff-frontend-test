@@ -1,10 +1,13 @@
 @use '../../styles/base' as *;
 
 .header{
-  padding: 20px 16px;
+  padding: 20px 16px 16px;
   display: flex;
   @include above($bp-sm){
     padding: 20px;
+  }
+  @include above($bp-md){
+    padding: 26px 20px;
   }
 
   .logoWrapper{

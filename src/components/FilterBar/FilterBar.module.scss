@@ -1,0 +1,77 @@
+@use '../../styles/base' as *;
+
+.filterBar{
+  margin: 0 20px;
+  border-top: 1px solid #000;
+  @include above($bp-md){
+    border-top: none;
+    border-bottom: 1px solid #000;
+    margin: 32px 50px 0;
+  }
+}
+
+:global{
+  .accordionBtn {
+    @extend %button-unstyled;
+    position: relative;
+    font-weight: $fw-bold;
+    padding-left: 20px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    line-height: toRem(22);
+    margin-bottom: 1rem;
+    &::before{
+      content: "";
+      background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14.18"><path d="M15 0H0L5.71547 6.02142L5.71499 14.1807L9.28504 12.334L9.28453 6.02142L15 0Z" fill="black"></path></svg>');
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      left: 0;
+      top: 4px;
+      background-repeat: no-repeat;
+    }
+    &::after{
+      content: "";
+      background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0.67 0 8.66 7.5"> <path d="M4.99991 0L0.669781 7.5H9.33004L4.99991 0Z" fill="black"></path> </svg>');
+      position: absolute;
+      width: 10px;
+      height: 15px;
+      right: 1px;
+      top: 2px;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-180deg);
+      transition: transform ease .2s;
+    }
+
+    &:not(.collapsed)::after {
+      transform: rotate(0deg);
+    }
+
+    @include above($bp-md){
+      display: none;
+    }
+  }
+
+  .filterWrapper{
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height ease-in-out .4s;
+    border-left: 1px solid #000;
+    margin-left: 5px;
+    padding-left: toRem(13);
+    &.open{
+      max-height: 350px;
+    }
+    @include above($bp-md){
+      max-height: none;
+      transition: none;
+      border-left: none;
+      margin-left: 0;
+      padding-left: 0;
+      display: flex;
+    }
+  }
+}

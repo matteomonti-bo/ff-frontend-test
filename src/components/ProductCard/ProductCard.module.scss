@@ -6,6 +6,11 @@ $card-size: 250px;
   margin: 40px auto;
   width: 100%;
   max-width: $card-size;
+  @include below($bp-sm){
+    &:first-of-type{
+      margin-top: 20px;
+    }
+  }
 
   @include above($bp-sm){
     margin: 10px 0;
@@ -27,12 +32,17 @@ $card-size: 250px;
     box-shadow: 0px 12px 99px -37px rgba(0, 0, 0, 0.25); // box shadow da figma
     border-radius: 4px;
     display: block;
+    overflow: hidden;
 
     img{
       max-width: 100%;
       aspect-ratio: 1;
       object-fit: contain;
       object-position: center;
+      transition: transform ease-in-out .4s;
+      &:hover{
+        transform: scale(1.1);
+      }
     }
   }
 
