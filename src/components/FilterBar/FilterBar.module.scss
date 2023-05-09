@@ -3,6 +3,11 @@
 .filterBar{
   margin: 0 20px;
   border-top: 1px solid #000;
+  @include above($bp-md){
+    border-top: none;
+    border-bottom: 1px solid #000;
+    margin: 32px 50px 0;
+  }
 }
 
 :global{
@@ -43,6 +48,10 @@
     &:not(.collapsed)::after {
       transform: rotate(0deg);
     }
+
+    @include above($bp-md){
+      display: none;
+    }
   }
 
   .filterWrapper{
@@ -55,6 +64,14 @@
     padding-left: toRem(13);
     &.open{
       max-height: 350px;
+    }
+    @include above($bp-md){
+      max-height: none;
+      transition: none;
+      border-left: none;
+      margin-left: 0;
+      padding-left: 0;
+      display: flex;
     }
   }
 }

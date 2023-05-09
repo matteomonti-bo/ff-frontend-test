@@ -8,6 +8,11 @@
     display: block;
     font-weight: $fw-bold;
     font-size: toRem(14);
+    @include above($bp-md){
+      display: inline-block;
+      margin-right: toRem(24);
+      font-size: toRem(16);
+    }
   }
 
   .filterValue{
@@ -16,5 +21,12 @@
     text-transform: uppercase;
     padding: 0 1em 0 0;
     font-size: toRem(12);
+    @include above($bp-md){
+      font-size: toRem(16);
+    }
+  }
+
+  & + .filter{
+    margin-left: toRem(64);
   }
 }

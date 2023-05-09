@@ -4,11 +4,12 @@
   @include above($bp-sm){
     display: flex;
     flex-wrap: wrap;
-    padding: 0 40px;
+    padding: 0 40px 40px;
     margin: 0 auto;
   }
   @include above($bp-md){
     max-width: 1064px;
+    padding: 64px 40px;
   }
   @include above($bp-xl){
     max-width: 1400px;

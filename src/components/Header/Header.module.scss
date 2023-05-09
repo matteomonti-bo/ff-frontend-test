@@ -6,6 +6,9 @@
   @include above($bp-sm){
     padding: 20px;
   }
+  @include above($bp-md){
+    padding: 26px 20px;
+  }
 
   .logoWrapper{
     flex: 1 0 auto;
