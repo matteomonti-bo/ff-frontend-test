@@ -50,10 +50,20 @@
   }
 
   .bag{
+    position: relative;
     width: 26px;
-    margin-bottom: 7px;
     @include above($bp-md){
       margin-right: 2rem;
     }
+  }
+  .counter{
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    line-height: 26px;
+    text-align: center;
+    font-size: toRem(11);
   }
 }
