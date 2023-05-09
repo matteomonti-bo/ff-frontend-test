@@ -34,6 +34,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
           </>
         )}
       </dl>
+      <button>AGGIUNGI AL CARRELLO</button>
     </div>
   );
 };

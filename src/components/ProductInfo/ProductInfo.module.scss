@@ -41,6 +41,23 @@
     margin-bottom: 36px;
   }
 
+  button{
+    @extend %button-unstyled;
+    background: $black;
+    border-radius: 4px;
+    border: none;
+    color: $white;
+    font-size: toRem(20);
+    line-height: toRem(29);
+    font-weight: $fw-bold;
+    text-align: center;
+    padding: 15px;
+    opacity: 1;
+    transition: opacity ease-in-out 0.2;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
 
 }
 
