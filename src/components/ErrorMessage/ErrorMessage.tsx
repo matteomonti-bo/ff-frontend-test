@@ -1,10 +1,10 @@
 import styles from "./ErrorMessage.module.scss";
 
-type ErrorMessagePropos = {
+type ErrorMessageProps = {
   children: JSX.Element | string;
 };
 
-const ErrorMessage = ({ children }: ErrorMessagePropos) => {
+const ErrorMessage = ({ children }: ErrorMessageProps) => {
   return <div className={styles.errorMessage}>{children}</div>;
 };
 

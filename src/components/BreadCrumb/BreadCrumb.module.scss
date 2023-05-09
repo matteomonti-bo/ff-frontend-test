@@ -1,0 +1,42 @@
+@use '../../styles/base' as *;
+
+.breadcrumb{
+  margin-bottom: 30px;
+  @include above($bp-sm){
+    margin-bottom: 60px;
+  }
+  @include above($bp-md){
+    margin-bottom: 80px;
+  }
+
+  ul{
+    list-style: none;
+    font-size: toRem(12);
+    line-height: toRem(20);
+    font-weight: $fw-light;
+    margin: 1em;
+    padding: 0;
+    @include above($bp-sm){
+      padding-left: 40px;
+      margin: 32px 1em;
+      font-size: toRem(14);
+    }
+  }
+  li{
+    position: relative;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-right: 1em;
+    &::after{
+      content: "›";
+      position: absolute;
+      width: 1em;
+      text-align: center;
+    }
+  }
+  li:last-child{
+    &::after{
+      content: '';
+    }
+  }
+}

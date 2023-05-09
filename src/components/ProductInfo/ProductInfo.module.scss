@@ -1,11 +1,11 @@
 @use '../../styles/base' as *;
 
 .productInfo{
-  margin: 50px;
+  padding: 50px;
   text-align: center;
 
   @include above($bp-md){
-    margin: 0 50px;
+    padding: 0 50px;
     text-align: left;
   }
 

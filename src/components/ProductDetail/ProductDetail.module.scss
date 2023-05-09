@@ -3,7 +3,8 @@
 .productDetail{
   @include above($bp-md){
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
+
     & > div{
       flex: 0 0 50%;
       max-width: 50%;
