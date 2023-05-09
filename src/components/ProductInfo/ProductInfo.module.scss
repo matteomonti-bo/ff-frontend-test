@@ -24,6 +24,16 @@
     line-height: toRem(35);
     font-weight: $fw-light;
   }
+  .paragraph{
+    max-width: 360px;
+    p{
+      margin: 0;
+      line-height: 1.4em;
+    }
+    p+p{
+      margin-top: 1em;
+    }
+  }
   dl{
     margin-top: 36px;
   }

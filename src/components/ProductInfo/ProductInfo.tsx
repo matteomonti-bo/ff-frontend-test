@@ -14,7 +14,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
       <div className={styles.price}>{formatCurrency(product.price)}</div>
       <dl>
         <dt>{"DESCRIZIONE"}</dt>
-        <dd>{product.description}</dd>
+        <dd className={styles.paragraph}><p>{product.description}</p></dd>
         <dt>{"MARCA"}</dt>
         <dd className="text-upper">{product.brand}</dd>
         <dt>{"CATEGORIA"}</dt>
