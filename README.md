@@ -1,5 +1,6 @@
 # Future Fashion Coding Challenge
-
+## Installation
+`npm install`
 ## Run the project (production build)
 ### Static server
 ```
