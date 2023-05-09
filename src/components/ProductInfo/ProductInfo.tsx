@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
 import StarRatings from "react-star-ratings";
 import { IProduct } from "../../models";
 import { formatCurrency } from "../../services/utils";
@@ -8,6 +10,8 @@ type ProductInfoProps = {
 };
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
+  const { itemsCount, setItemsCount } = useContext(CartContext)
+
   return (
     <div className={styles.productInfo}>
       <h1 className={styles.title}>{product.title}</h1>
@@ -34,7 +38,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
           </>
         )}
       </dl>
-      <button>AGGIUNGI AL CARRELLO</button>
+      <button onClick={() => {setItemsCount(itemsCount+1)}}>AGGIUNGI AL CARRELLO</button>
     </div>
   );
 };
