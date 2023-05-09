@@ -3,7 +3,7 @@ import 'swiper/css';
 import "swiper/css/a11y";
 import "swiper/css/pagination";
 import {isValidUrl } from "../../services/utils"
-import styles from "./ProductSlider.module.scss"
+import "./ProductSlider.scss"
 
 // import required modules
 import { Pagination, A11y } from "swiper";
@@ -14,13 +14,20 @@ type ProductSliderProps = {
 }
 const ProductSlider = ({images, title}:ProductSliderProps) => {
   return (
-    <div className={styles.productSlider}>
+    <div>
       <Swiper
         modules={[Pagination, A11y]}
-        pagination={true}
+        pagination={{
+          el: '.custom-pagination',
+          clickable: true,
+          renderBullet: (index, className) => {
+           return '<span class="' + className + '"><span class="visually-hidden">' + (index + 1) + "</span></span>";
+          },
+        }}
       >
         {images.filter(image => isValidUrl(image)).map((image, i) => <SwiperSlide key={i}><img src={image} alt={`${title} - ${i+1}`} /></SwiperSlide>)}
       </Swiper>
+      <div className='custom-pagination'></div>
     </div>
   );
 };
