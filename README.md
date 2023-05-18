@@ -1,4 +1,4 @@
-# Future Fashion Coding Challenge
+# Frontend Coding Challenge
 ## Installation
 `npm install`
 ## Run the project (production build)
