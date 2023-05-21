@@ -17,9 +17,5 @@ export enum FiltersType {
   Brand = "brand"
 }
 
-export type FilterFields = {
-  category: string
-  brand: string;
-}
-
 export type Filters = Record<FiltersType, string[]>
+export type FilterValues = Record<FiltersType, string>
