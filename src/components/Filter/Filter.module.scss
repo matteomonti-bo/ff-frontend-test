@@ -31,4 +31,12 @@
       margin-left: toRem(64);
     }
   }
+
+  :global{
+    .selected{
+      font-weight: $fw-bold;
+    }
+  }
+
 }
+
