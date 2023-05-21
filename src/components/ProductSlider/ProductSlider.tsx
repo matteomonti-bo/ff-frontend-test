@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/a11y";
 import "swiper/css/pagination";
-import {isValidUrl } from "../../services/utils"
+import {isValidUrl } from "../../libs/utils"
 import "./ProductSlider.scss"
 
 // import required modules

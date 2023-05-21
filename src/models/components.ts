@@ -21,3 +21,5 @@ export type FilterFields = {
   category: string
   brand: string;
 }
+
+export type Filters = Record<FiltersType, string[]>

@@ -1,4 +1,4 @@
-import { IProduct, FiltersType } from "../models";
+import { IProduct, FiltersType, Filters } from "../models";
 
 const domain = "https://dummyjson.com";
 
@@ -52,8 +52,17 @@ const getDistinctValues = (products: IProduct[], field: FiltersType) => {
   return Array.from(new Set(products.map((i) => i[field])));
 };
 
+const getFilterData = (products: IProduct[]) : Filters => {
+  const category = getDistinctValues(products, FiltersType.Category).slice(0, 3);
+  const brand = getDistinctValues(products, FiltersType.Brand).slice(0, 3);
+  return {
+    category,
+    brand
+  }
+}
+
 const handleErrors = (message: string) => {
   console.error(message);
 };
 
-export {getProducts, getProduct, getDistinctValues};
+export {getProducts, getProduct, getFilterData};
