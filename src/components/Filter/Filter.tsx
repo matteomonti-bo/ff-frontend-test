@@ -1,3 +1,5 @@
+import classNames from "classnames";
+import { useState } from "react";
 import { FiltersType } from "../../models";
 import styles from "./Filter.module.scss";
 
@@ -8,12 +10,15 @@ type FilterProps = {
 };
 
 const Filter = ({ filterBy, values, onFilterClick }: FilterProps) => {
+  const [currentFilter, setCurrentFilter] = useState("")
   const handleClick = (filter: string, value: string) => {
+    setCurrentFilter(value);
     onFilterClick(filter, value);
   };
+
   const items = values.map((item) => (
     <button
-      className={styles.filterValue}
+      className={classNames(styles.filterValue, {selected: currentFilter === item} )}
       key={item}
       onClick={() => handleClick(filterBy, item)}
     >

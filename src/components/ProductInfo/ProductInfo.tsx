@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import StarRatings from "react-star-ratings";
 import { IProduct } from "../../models";
-import { formatCurrency } from "../../services/utils";
+import { formatCurrency } from "../../libs/utils";
 import styles from "./ProductInfo.module.scss";
 
 type ProductInfoProps = {

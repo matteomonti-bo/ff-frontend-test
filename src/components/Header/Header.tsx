@@ -8,6 +8,7 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const { itemsCount } = useContext(CartContext)
+
   return (
     <header className={styles.header}>
       <div className={styles.logoWrapper}>

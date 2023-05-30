@@ -1,34 +1,40 @@
-@use '../../styles/base' as *;
+@use "../../styles/base" as *;
 
-.filter{
+.filter {
   text-transform: uppercase;
   margin-bottom: toRem(12);
 
-  .filterLabel{
+  .filterLabel {
     display: block;
     font-weight: $fw-bold;
     font-size: toRem(14);
-    @include above($bp-md){
+    @include above($bp-md) {
       display: inline-block;
       margin-right: toRem(24);
       font-size: toRem(16);
     }
   }
 
-  .filterValue{
+  .filterValue {
     @extend %button-unstyled;
     font-weight: $fw-light;
     text-transform: uppercase;
     padding: 0 1em 0 0;
     font-size: toRem(12);
-    @include above($bp-md){
+    @include above($bp-md) {
       font-size: toRem(16);
     }
   }
 
-  @include above($bp-md){
-    & + .filter{
+  @include above($bp-md) {
+    & + .filter {
       margin-left: toRem(64);
+    }
+  }
+
+  :global {
+    :local(.filterValue).selected {
+      font-weight: $fw-regular;
     }
   }
 }

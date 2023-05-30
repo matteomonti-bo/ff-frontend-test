@@ -12,12 +12,12 @@ export interface IProduct {
   images: string[];
 }
 
+export type ProductPreview = Pick<IProduct, 'id' | 'title' | 'category' | 'brand' | 'thumbnail'> & Partial<IProduct>
+
 export enum FiltersType {
   Category = "category",
   Brand = "brand"
 }
 
-export type FilterFields = {
-  category: string
-  brand: string;
-}
+export type Filters = Record<FiltersType, string[]>
+export type FilterValues = Record<FiltersType, string>

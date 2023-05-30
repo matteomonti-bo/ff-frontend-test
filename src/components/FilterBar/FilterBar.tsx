@@ -1,36 +1,42 @@
 import { useState } from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 import Filter from "../Filter";
-import { IProduct, FiltersType } from "../../models";
-import { getDistinctValues } from "../../services/products";
-import styles from "./FilterBar.module.scss"
-
+import { Filters, FiltersType } from "../../models";
+import styles from "./FilterBar.module.scss";
 
 type ProductListProps = {
-  products: IProduct[];
-  onInputChange: (name:string, value: string) => void;
+  filters: Filters;
+  onInputChange: (name: string, value: string) => void;
 };
 
-const FilterBar = ({ products, onInputChange }: ProductListProps) => {
-  const [collapsed, setCollapsed] = useState<boolean>(true)
+const FilterBar = ({ filters, onInputChange }: ProductListProps) => {
+  const [collapsed, setCollapsed] = useState<boolean>(true);
+  const filterItem = Object.keys(filters).map((filter) => (
+    <Filter
+      key={filter}
+      filterBy={filter as FiltersType}
+      values={filters[filter as keyof typeof filters]}
+      onFilterClick={onInputChange}
+    />
+  ));
 
   const handleClick = () => {
-    setCollapsed(prevState => !prevState)
-  }
+    setCollapsed((prevState) => !prevState);
+  };
 
-  // recupero i valori distinti di category e brand - ai fini della prova prendo solo i primi 3 valori
-  const categories = getDistinctValues(products, FiltersType.Category).slice(0, 3);
-  const brand = getDistinctValues(products, FiltersType.Brand).slice(0, 3);
-
-  return (
+  return !filters ? null : (
     <div className={styles.filterBar}>
-      <button className={classNames('accordionBtn', {collapsed})} onClick={handleClick}>FILTRI</button>
-      <div className={classNames('filterWrapper', {open: !collapsed})}>
-        <Filter filterBy={FiltersType.Category} values={categories} onFilterClick={onInputChange}/>
-        <Filter filterBy={FiltersType.Brand} values={brand} onFilterClick={onInputChange}/>
+      <button
+        className={classNames("accordionBtn", { collapsed })}
+        onClick={handleClick}
+      >
+        FILTRI
+      </button>
+      <div className={classNames("filterWrapper", { open: !collapsed })}>
+        {filterItem}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default FilterBar;
