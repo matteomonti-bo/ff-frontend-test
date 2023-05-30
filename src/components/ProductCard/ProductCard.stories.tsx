@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
 import ProductCard from './ProductCard';
+import { singleLiteProduct } from '../../mocks/products';
 
 const meta: Meta<typeof ProductCard> = {
   title: "Components/Product/Card",
@@ -17,6 +18,6 @@ type Story = StoryObj<typeof ProductCard>;
 
 export const Default: Story = {
   args: {
-    product: { "id": 1, "title": "iPhone 9", "category": "smartphones", "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"}
+    product: singleLiteProduct
   }
 }
