@@ -1,10 +1,11 @@
-import { IProduct } from "../../models";
+import { ProductPreview } from "../../models";
 import styles from "./ProductCard.module.scss";
 import { Link } from "react-router-dom";
 
 type ProductCardProps = {
-  product: IProduct;
+  product: ProductPreview;
 };
+
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <article className={styles.productCard}>
