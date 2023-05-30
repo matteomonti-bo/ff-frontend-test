@@ -1,11 +1,11 @@
-import { IProduct, FilterValues } from "../../models";
+import { ProductPreview, FilterValues } from "../../models";
 import { filterProducts } from "../../libs/products";
 import ErrorMessage from "../ErrorMessage";
 import ProductCard from "../ProductCard";
 import styles from "./ProductList.module.scss";
 
 type ProductListProps = {
-  products: IProduct[];
+  products: ProductPreview[];
   filterValues: FilterValues;
 };
 

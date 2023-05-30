@@ -1,6 +1,6 @@
-import { IProduct, FilterValues } from "../models";
+import { ProductPreview, FilterValues } from "../models";
 
-export const filterProducts = (products: IProduct[], filters: FilterValues) => {
+export const filterProducts = (products: ProductPreview[], filters: FilterValues) => {
   if(!products.length) return [];
   if (filters.category === "" && filters.brand === "") return products;
   // filter products

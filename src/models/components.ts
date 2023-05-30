@@ -12,7 +12,7 @@ export interface IProduct {
   images: string[];
 }
 
-export type ProductPreview = Pick<IProduct, 'id' | 'title' | 'category' | 'thumbnail'> & Partial<IProduct>
+export type ProductPreview = Pick<IProduct, 'id' | 'title' | 'category' | 'brand' | 'thumbnail'> & Partial<IProduct>
 
 export enum FiltersType {
   Category = "category",
